@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></link>
+    <script src="endrebillett.js"></script>
 </head>
 <body>
-$END$
+<div>
+    <button>
+        <a href="index.html">Tilbake</a>
+    </button>
+</div>
+<label for="Film"> Velg film: </label>
+<select id="Film">
+    <option selected disabled>Velg film her</option>
+    <option label="Harry Potter og de vises stein"> Harry Potter og de vises stein</option>
+    <option label="Fast and Furious 6">Wolf of Wall Street</option>
+    <option label="Wolf of Wall Street"> Wolf of Wall Street</option>
+</select>
+<section>
+    <label for="Antall">Antall </label>
+    <input id="Antall" onchange="sjekkAntall()"/>
+</section>
+<section>
+    <label for="Fornavn">Fornavn</label>
+    <input id="Fornavn" type="text" onchange="sjekkFornavn()"/>
+</section>
+</section>
+<section>
+    <label for="Etternavn">Etternavn</label>
+    <input id="Etternavn" type="text" onchange="sjekkEtternavn()"/>
+</section>
+</section>
+<section>
+    <label for="Telefonnr">Telefonnr</label>
+    <input id="Telefonnr" onchange="sjekkTelefonnr()"/>
+</section>
+</section>
+<section>
+    <label for="Epost">Epost</label>
+    <input id="Epost" type="email" onchange="sjekkEpost()"/>
+    <button onclick="hentAlle()">Vis billetter </button>
+    <div id="visbillett"/>
+</section>
 </body>
 </html>

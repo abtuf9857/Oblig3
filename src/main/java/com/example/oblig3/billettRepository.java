@@ -13,9 +13,14 @@ public class billettRepository {
     @Autowired
     private JdbcTemplate db;
 
+    public void endre(billett nybillett){
+        String sql="UPDATE BILLETTER SET film=?," +
+                "antall=?,fornavn=?,etternavn=?,telefonnr=?,epost=? WHERE id=?";
+        db.update(sql,nybillett.getFilm(),nybillett.getAntall(),nybillett.getFornavn(),nybillett.getEtternavn(),nybillett.getTelefonnr(),nybillett.getEpost(),nybillett.getId());
+    }
     public void lagreBillett(billett nybillett) {
-        String sql = "INSERT INTO BILLETTER (antall,fornavn,etternavn,epost)VALUES(?,?,?,?)";
-        db.update(sql, nybillett.getAntall(), nybillett.getEpost(), nybillett.getEtternavn(), nybillett.getFornavn(), nybillett.getTelefonnr());
+        String sql = "INSERT INTO BILLETTER (film,antall,fornavn,etternavn,telefonnr,epost) VALUES(?,?,?,?,?,?)";
+        db.update(sql, nybillett.getFilm(),nybillett.getAntall(), nybillett.getFornavn(), nybillett.getEtternavn(), nybillett.getTelefonnr(), nybillett.getEpost());
     }
 
     public List<billett> hentAlle() {

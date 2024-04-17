@@ -11,7 +11,6 @@ import java.util.List;
 public class billettController {
 
     @Autowired
-
     private billettRepository rep;
 
 
@@ -25,6 +24,13 @@ public class billettController {
         return rep.hentAlle();
 
     }
+
+    @PostMapping("/endre")
+    public void endre(billett nybillett) {
+        rep.endre(nybillett);
+    }
+
+
 
     @GetMapping("/slett")
     public void slettbillett() {

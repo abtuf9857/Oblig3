@@ -23,10 +23,12 @@ function billettkjøp() {
         document.getElementById("Epost").value = ""
 
         $.post("/lagre",bestilling,function (){
-            visBillett()
+            hentAlle();
         })
 
     }
+}
+function hentAlle(){
     $.get("/hentAlle", function (data) {
         visBillett(data)
 
@@ -112,7 +114,7 @@ function sjekkEpost() {
     }
 }
 
-function visBillett() {
+function visBillett(billetter) {
     let ut = ""
     for (let film in billetter) {
         console.log(billetter[film])
