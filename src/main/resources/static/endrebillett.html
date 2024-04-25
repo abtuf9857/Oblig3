@@ -16,7 +16,7 @@
 <select id="Film">
     <option selected disabled>Velg film her</option>
     <option label="Harry Potter og de vises stein"> Harry Potter og de vises stein</option>
-    <option label="Fast and Furious 6">Wolf of Wall Street</option>
+    <option label="Fast and Furious 6">Fast and Furious</option>
     <option label="Wolf of Wall Street"> Wolf of Wall Street</option>
 </select>
 <section>
@@ -43,6 +43,12 @@
     <input id="Epost" type="email" onchange="sjekkEpost()"/>
     <button onclick="hentAlle()">Vis billetter </button>
     <div id="visbillett"/>
+</section>
+<section>
+<h2> Alle billetter </h2>
+<button onclick="slettbillett()">Slett alle billettene</button>
+<div id="slettbillett">
+</div>
 </section>
 </body>
 </html>

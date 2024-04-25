@@ -16,7 +16,8 @@ public class billettRepository {
     public void endre(billett nybillett){
         String sql="UPDATE BILLETTER SET film=?," +
                 "antall=?,fornavn=?,etternavn=?,telefonnr=?,epost=? WHERE id=?";
-        db.update(sql,nybillett.getFilm(),nybillett.getAntall(),nybillett.getFornavn(),nybillett.getEtternavn(),nybillett.getTelefonnr(),nybillett.getEpost(),nybillett.getId());
+        var res = db.update(sql,nybillett.getFilm(),nybillett.getAntall(),nybillett.getFornavn(),nybillett.getEtternavn(),nybillett.getTelefonnr(),nybillett.getEpost(),nybillett.getId());
+        System.out.println(res);
     }
     public void lagreBillett(billett nybillett) {
         String sql = "INSERT INTO BILLETTER (film,antall,fornavn,etternavn,telefonnr,epost) VALUES(?,?,?,?,?,?)";
@@ -30,7 +31,7 @@ public class billettRepository {
     }
 
     public void slettAllebilletter() {
-        String sql = "DELETE FROM KUNDE";
+        String sql = "DELETE FROM BILLETTER";
         db.update(sql);
     }
 }

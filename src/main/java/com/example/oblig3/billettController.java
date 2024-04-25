@@ -27,6 +27,7 @@ public class billettController {
 
     @PostMapping("/endre")
     public void endre(billett nybillett) {
+        System.out.println("ny billett: " + nybillett.toString());
         rep.endre(nybillett);
     }
 
