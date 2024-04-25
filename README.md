@@ -1,2 +1,2 @@
-Vedlagt er link til youtube videon:
+Vedlagt er link til youtube videoen:
 https://www.youtube.com/watch?v=YhzWdGwLoow 
